@@ -15,6 +15,8 @@ class UsersTableSeeder extends Seeder
             'name' => 'generico',
             'email' => 'tester@tester.cl',
             'password' => bcrypt('1234'),
+            'idRols'=> 2,
+            'rut' => 7
         ]);
     }
 }

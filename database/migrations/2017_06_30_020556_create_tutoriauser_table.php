@@ -15,6 +15,8 @@ class CreateTutoriauserTable extends Migration
     {
         Schema::create('tutoriauser', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('idTutoria')->on('Users');
+            $table->integer('idUser')->on('Users');
             $table->timestamps();
         });
     }

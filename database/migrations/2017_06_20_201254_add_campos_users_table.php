@@ -16,12 +16,12 @@ class AddCamposUsersTable extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->integer('idRols')->on('rols');
             $table->string('rut', 8);
-            $table->date('fechaNacimiento');
-            $table->string('direccion');
-            $table->string('telefono');
-            $table->string('celular');
-            $table->date('fechaContratacion');
-            $table->integer('valorTutoria');
+            $table->date('fechaNacimiento')->nullable();
+            $table->string('direccion')->nullable();
+            $table->string('telefono')->nullable();
+            $table->string('celular')->nullable();
+            $table->date('fechaContratacion')->nullable();
+            $table->integer('valorTutoria')->nullable();
         });
     }
 
