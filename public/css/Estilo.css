@@ -1,0 +1,25 @@
+.cuerpo
+{
+	min-height: 580px;
+	height: auto;
+	background: #FFFFFF;
+	border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+}
+footer
+{
+	margin-top: 20px;
+	text-align: center;
+	min-height: 20px;
+	height: auto;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background: #239B56;
+	color: #FFFFFF;
+	border-top: 3px solid #F8C471;
+}
+body
+{
+	background: #DAF7A6;
+}
