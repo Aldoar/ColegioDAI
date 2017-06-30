@@ -7,8 +7,9 @@
 Dentro de la carpeta ejecutar los siguientes comando
 
 - php artisan migrate
-- para la creación de roles: php artisan db:seed --class=RolsTableSeeder
-- para la creación de usuario generico: php artisan db:seed --class=UsersTableSeeder
+- Para la creación de roles: php artisan db:seed --class=RolsTableSeeder
+- Para la creación de usuario generico: php artisan db:seed --class=UsersTableSeeder
+- Para la creación de estado php artisan db:seed --class=EstadosTableSeeder
 
 Usuario Genérico:
 - Correo: tester@tester.cl
