@@ -19,7 +19,11 @@ Usuario Genérico:
 @extends('Master')
 
 @section('nav')
+
 	@include('nav.nombre_de_su_nav')
+
 @show
+
 @section('contenido')
+
 @show
