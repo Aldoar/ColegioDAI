@@ -30,6 +30,12 @@ Route::get('/secretaria', function(){
 });
 /*
 |--------------------------------------------------------------------------
-| API Routes Secretaria
+| API Routes 
 |--------------------------------------------------------------------------
 */
+//Listar usuarios
+Route::get('api/Users', 'UserController@listarUserJson');
+//Buscar usuarios por rut
+Route::get('/api/Users/buscar/{rut}', 'UserController@buscarUserRutJson');
+//Listar por Rol
+Route::get('api/Users/Rol/{rol}' , 'UserController@listarUserRolJson');

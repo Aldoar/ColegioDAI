@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Rol extends Model
 {
-    public user()
+    public function user()
     {
     	return $this->belongsTo('App\User');
     }

@@ -27,7 +27,7 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public rol()
+    public function rol()
     {
         return $this->hasOne('App\Rol');
     }
