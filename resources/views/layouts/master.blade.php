@@ -8,25 +8,26 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Dimao</title>
+    <title>ColegioDAI</title>
     <!-- Estilo -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/Estilo.css') }}" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/jquery.dataTables.min.css') }}">
-    
-    
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/jquery.dataTables.min.css') }}">   
 </head>
 <body>
     <div id="app">
-        @yield('nav')
+        
     <div class="container">
+        @yield('nav')
         <div class="cuerpo">
-            @yield('contenido')
+            <div clss="container">
+                @yield('cuerpo')
+            </div>
         </div>
     </div>
     <footer>
-        Lo que usted quiera
+        Colegio DAI
     </footer>
     <!-- Scripts -->
     <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>

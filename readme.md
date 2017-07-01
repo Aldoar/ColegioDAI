@@ -17,14 +17,21 @@ Usuario Genérico:
 
 ## Como utilizar el Master.blade
 
-@extends('Master')
+@extends('layouts.master')
 
 @section('nav')
 
-	@include('nav.nombre_de_su_nav')
+	@include('nav.la_barra_del_perfil')
+
+@endsection
 
 @show
 
-@section('contenido')
+
+@section('cuerpo')
+
+	lo que usted quiera
+
+@endsection
 
 @show
