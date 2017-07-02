@@ -28,9 +28,19 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/secretaria', function(){
 	return view('secretaria.index');
 });
-
+/*
+|--------------------------------------------------------------------------
+| Web Routes Inspector
+|--------------------------------------------------------------------------
+*/
 Route::get('/inspector', function(){
 	return view('inspector.index');
+});
+Route::get('/listarUsuarios', function(){
+	return view('inspector.listar');
+});
+Route::get('/cargarPaginaAlumno', function(){
+	return view('inspector.consulta');
 });
 /*
 |--------------------------------------------------------------------------

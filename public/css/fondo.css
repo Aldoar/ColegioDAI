@@ -1,0 +1,7 @@
+#imagen {
+   background:      
+    url(images/city.png)no-repeat center center fixed;
+    padding: 170px 20px;
+  }
+
+  h1{font-size:45px;color:blue;}

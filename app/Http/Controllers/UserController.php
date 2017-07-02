@@ -26,4 +26,6 @@ class UserController extends Controller
     	$user = User::Where('rut', $rut)->first();
     	return $user->toJson();
     }
+
+    
 }

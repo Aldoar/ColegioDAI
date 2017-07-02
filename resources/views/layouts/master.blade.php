@@ -13,7 +13,9 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/Estilo.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/fondo.css') }}" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/jquery.dataTables.min.css') }}">   
+
 </head>
 <body>
     <div id="app">
@@ -30,16 +32,19 @@
         Colegio DAI
     </footer>
     <!-- Scripts -->
+    
     <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/jquery.dataTables.min.js')}}"></script>
-    <scrispt src="{{ asset('js/funciones.js')}}"></script>
+    <script  src="{{ asset('js/inspector.js') }}"></script>    
+    <scrispt src="{{ asset('js/funciones.js')}}"></script>    
     <!-- Se utiliza para Jquery.Table -->
-    <script type="text/javascript">
+    <script type="text/javascript">    
         $(document).ready( function () {
         $('#table_id').DataTable();
         } );
     </script>
     <!-- Se utiliza para Jquery.Table -->
+    
 </body>
 </html>

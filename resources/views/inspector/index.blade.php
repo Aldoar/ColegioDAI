@@ -6,6 +6,13 @@
 @show
 
 @section('cuerpo')
-	prueba
+	<div class="row-fluid" id="cuerpoInspector">
+	 <div id="imagen">
+	  <div class="container" >
+	    <h1>Bienvenido Inspector</h1>
+	    <p style="color:cornflowerblue;">En esta página podrá efectuar sus tareas asignadas</p>
+	  </div>
+	 </div>
+	</div>
 @endsection
 @show
