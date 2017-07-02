@@ -28,6 +28,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/secretaria', function(){
 	return view('secretaria.index');
 });
+Route::get('/secretaria/listarAlumnos', 'UserController@listarAlumnos')->name('secretariaListarAlumnnos');
 /*
 |--------------------------------------------------------------------------
 | Web Routes Inspector

@@ -5,7 +5,7 @@
     </div>
     <ul class="nav navbar-nav">
       <li><a href="#">Inicio</a></li>
-      <li><a href="#">Listar Alumnos</a></li>
+      <li><a href="{{route('secretariaListarAlumnnos')}}">Listar Alumnos</a></li>
       <li><a href="#">Listar Profesor</a></li>
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Tutorias
