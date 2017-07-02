@@ -43,6 +43,10 @@ Route::get('/listarUsuarios', function(){
 Route::get('/cargarPaginaAlumno', function(){
 	return view('inspector.consulta');
 });
+Route:: get('/inspector/registar/alumnos', function()
+{
+	return view('inspector.registrar');
+})->name('registarAlumnos');
 /*
 |--------------------------------------------------------------------------
 | API Routes 

@@ -11,7 +11,7 @@
         <ul class="dropdown-menu" id="alumn">
           <li><a href="#" id="listarAlu">Listar  Alumnos</a></li>
           <li><a href="#" id="consultarAlu">Consultar Alumno</a></li>
-          <li><a href="#" id="registrarAlu">Registrar Alumno</a></li>
+          <li><a href="{{route('registarAlumnos')}}" id="registrarAlu">Registrar Alumno</a></li>
           <li><a href="#" id="eliminarAlu">Eliminar Alumno</a></li>
         </ul>
       </li>
@@ -37,7 +37,7 @@
       </li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-    	<li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Salir</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Salir</a></li>
     </ul>
   </div>
 </nav>

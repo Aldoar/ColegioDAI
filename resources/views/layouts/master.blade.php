@@ -18,16 +18,16 @@
 
 </head>
 <body>
-    <div id="app">
+    <div id="app">  
+        <div class="container">
+            @yield('nav')
+        </div>
+        <div class="container">
+            <div class="cuerpo">
+            @yield('cuerpo')
         
-    <div class="container">
-        @yield('nav')
-        <div class="cuerpo">
-            <div clss="container">
-                @yield('cuerpo')
             </div>
         </div>
-    </div>
     <footer>
         Colegio DAI
     </footer>

@@ -23,5 +23,8 @@ class RolsTableSeeder extends Seeder
         DB::table('rols')->insert([
             'nombre' => 'Alumno',
         ]);
+        DB::table('rols')->insert([
+            'nombre' => 'Profesor',
+        ]);
     }
 }
