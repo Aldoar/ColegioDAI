@@ -28,6 +28,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/secretaria', function(){
 	return view('secretaria.index');
 });
+
+Route::get('/inspector', function(){
+	return view('inspector.index');
+});
 /*
 |--------------------------------------------------------------------------
 | API Routes 
