@@ -43,10 +43,11 @@ Route::get('/listarUsuarios', function(){
 Route::get('/cargarPaginaAlumno', function(){
 	return view('inspector.consulta');
 });
-Route:: get('/inspector/registar/alumnos', function()
-{
+Route::get('/inspector/registrar/alumnos', function(){
 	return view('inspector.registrar');
 })->name('registarAlumnos');
+Route::post('/inspector/registrarAlumno',
+	'UserController@registrarAlumno')->name('guardarUsuario');
 /*
 |--------------------------------------------------------------------------
 | API Routes 

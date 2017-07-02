@@ -28,6 +28,5 @@
 		<div class="alert alert-info"><h2>
 		<span class="glyphicon glyphicon-remove"></span> No hay datos</h2></div>
 	@endif
-	
 @endsection
 @show

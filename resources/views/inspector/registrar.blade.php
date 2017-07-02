@@ -22,7 +22,7 @@
     </div>
 @endif
 <div class="col-sm-offset-3 col-sm-6">
-<form method="post">
+<form method="post" action="{{ route('guardarUsuario') }}">
 	{{ csrf_field() }}
 	<div class="form-group">
 		<label for="Rut">Rut:</label>
