@@ -34,8 +34,12 @@ Route::get('/secretaria', function(){
 |--------------------------------------------------------------------------
 */
 //Listar usuarios
-Route::get('api/Users', 'UserController@listarUserJson');
+Route::get('/api/Users', 'UserController@listarUserJson');
 //Buscar usuarios por rut
 Route::get('/api/Users/buscar/{rut}', 'UserController@buscarUserRutJson');
-//Listar por Rol
-Route::get('api/Users/Rol/{rol}' , 'UserController@listarUserRolJson');
+//Listar usuarios por rol
+Route::get('/api/Users/Rol/{rol}' , 'UserController@listarUserRolJson');
+//Listar Rol
+Route::get('/api/Rols', 'RolController@listarRol');
+//Listar Estados
+Route::get('/api/Estados', 'EstadoController@listarEstado');

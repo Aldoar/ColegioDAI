@@ -9,7 +9,7 @@ class UserController extends Controller
 {
     //retorno datos para secretaria
     
-    
+
     //Retorno de datos en json
     public function listarUserJson()
     {
