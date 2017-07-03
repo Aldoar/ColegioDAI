@@ -25,12 +25,17 @@ class HomeController extends Controller
     public function index()
     {
         switch (Auth::user()->idRols) {
+            case '1':
+                return redirect()->route('indexInspector');
+                break;
             case '2':
                 return redirect()->route('indexInspector');
                 break;
-            
+            case '3':
+                return redirect()->route('secretariaIndex');
+                break;
             default:
-                # code...
+                return redirect()->route('salir');
                 break;
         }
     }
