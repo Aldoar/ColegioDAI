@@ -28,6 +28,8 @@
                             <th class="success">Fecha Nacimiento&nbsp;&nbsp;</th>
                             <th class="success">Dirección&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
                             <th class="success">Teléfono&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                            <th class="success">Celular&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                            <th class="success">Fecha Contratación&nbsp;&nbsp;</th>
                         </tr>
                     </table>
                 </div>    

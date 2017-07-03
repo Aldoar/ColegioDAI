@@ -21,14 +21,14 @@ class UserController extends Controller
     }
 
     //registrar alumno
-    public function registrarAlumno(Request $request)
+   /* public function registrarAlumno(Request $request)
     {
         $this->validate($request,[
             'rut'=> 'required|min9'
-            'name'=> 'required|min:10',
+            'nombre'=> 'required|min:10',
             'password' => 'required|min:4',
             'email' => 'required|email|unique:users',
-            'curso' => 'required',
+            'idcurso' => 'required',
             'direccion' =>  'required'
             ]);
         if($request->telefono != "" || $request->celular != "")
@@ -38,7 +38,7 @@ class UserController extends Controller
             $user->rut = quitarDV($request->name);
             $user->password = bcrypt($request->name);
             $user->email  = $request->email;
-            $user->curso = $request->curso;
+            $user->idcurso = $request->curso;
             $user->direccion = Crypt::encrypt($request->direccion);
             $user->idRols = 4;
             $user->save();
@@ -50,7 +50,7 @@ class UserController extends Controller
             //lo Mismo aquí
         }
         
-    }
+    }*/
 
     //Retorno de datos en json
     public function listarUserJson()
@@ -66,9 +66,21 @@ class UserController extends Controller
     public function buscarUserRutJson($rut)
     {
     	$user = User::Where('rut', $rut)->first();
-    	return $user->toJson();
+        if($user!=null)
+    	   return $user->toJson();
+        else
+            return null;
     }
-    private function quitarDV($rut)
+
+    public function delete($id) {
+
+        if(User::destroy($id)) {
+             return "ok";
+        }
+    }
+
+
+    /*private function quitarDV($rut)
     {
         if(strlen($rut) != 10)
         {
@@ -97,5 +109,5 @@ class UserController extends Controller
     $dv = $dv == 11 ? 0 : ($dv == 10 ? "K" : $dv);
     return $dv;
 
-    }
+    }*/
 }

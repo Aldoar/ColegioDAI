@@ -8,7 +8,8 @@
             <tr>
                 <th class="success">RUT Alumno&nbsp;&nbsp;&nbsp;</th>
                 <th class="success">Nombre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                <th class="success">Curso&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>                
+                <th class="success">Curso&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th> 
+                <th class="success">Fecha Contratación&nbsp;&nbsp;</th>               
             </tr>
         </table>
     </div>    
