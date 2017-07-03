@@ -13,11 +13,12 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('principal');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/salir', 'UserController@salir')->name('salir');
 
 
 /*
@@ -36,22 +37,22 @@ Route::get('/secretaria/listarAlumnos', 'UserController@listarAlumnos')->name('s
 */
 Route::get('/inspector', function(){
 	return view('inspector.index');
-});
+})->name('indexInspector')->middleware('rols:2');
 Route::get('/listarUsuarios', function(){
-	return view('inspector.listar');
+	return view('inspector.listar')->middleware('rols:2');
 });
 Route::get('/cargarPaginaAlumno', function(){
-	return view('inspector.consulta');
+	return view('inspector.consulta')->middleware('rols:2');
 });
 Route::get('/cargarPaginaEliminar', function(){
-	return view('inspector.eliminar');
+	return view('inspector.eliminar')->middleware('rols:2');
 });
 Route::get('usuario/eliminar/{rut}','UserController@delete');
 Route::get('/inspector/registrar/alumnos', function(){
 	return view('inspector.registrar');
-})->name('registarAlumnos');
+})->name('registarAlumnos')->middleware('rols:2');
 Route::post('/inspector/registrarAlumno',
-	'UserController@registrarAlumno')->name('guardarUsuario');
+	'UserController@registrarAlumno')->name('guardarUsuario')->middleware('rols:2');
 /*
 |--------------------------------------------------------------------------
 | API Routes 
