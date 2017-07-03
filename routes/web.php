@@ -27,7 +27,7 @@ Route::get('/salir', 'UserController@salir')->name('salir');
 |--------------------------------------------------------------------------
 */
 Route::get('/secretaria', function(){
-	return view('secretaria.index');
+	return view('secretaria.index')->name('secretariaIndex');
 });
 Route::get('/secretaria/listarAlumnos', 'UserController@listarAlumnos')->name('secretariaListarAlumnnos');
 /*
