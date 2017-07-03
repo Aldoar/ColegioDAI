@@ -1,29 +1,12 @@
-@extends('layouts.master')
 
-@section('nav')
-	@include('nav.inspector')
-@endsection
-
-@show
-
-@section('cuerpo')
 <div class="alert alert-success">
 <h5>
 	<span class="glyphicon glyphicon-user"></span>Registrar Alumnos
 </h5>
 </div>
-@if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
 <div class="col-sm-offset-3 col-sm-6">
-<form method="post" action="{{ route('guardarUsuario') }}">
-	{{ csrf_field() }}
+
+	
 	<div class="form-group">
 		<label for="Rut">Rut:</label>
    			<input type="text" name="Rut" class="form-control" id="Rut" placeholder="234567-8" required>
@@ -57,12 +40,26 @@
 		<input type="text" name="celular" class="form-control" id="celular" required>
 	</div>
 	<div class="form-group">
-		<button class="btn btn-primary form-control">
+		<button class="btn btn-primary form-control" id="btnRegistra">
 			<i class="glyphicon glyphicon-plus"></i>
 			Registrar Usuario
 		</button>
 	</div>
-</form>
+
 </div>
-@endsection
-@show
+<div class="modal fade" tabindex="-1" role="dialog" id="eliminarModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Mensaje de Registro</h4>
+      </div>
+      <div class="modal-body">
+        <p id="mensajeModal"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>        
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

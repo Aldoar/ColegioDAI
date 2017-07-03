@@ -2,7 +2,7 @@
     <div class="row">
         <div class="form-horizontal"><br/>
             <!-- Form Name -->
-            <legend>&nbsp;&nbsp;<span class="glyphicon glyphicon-search"></span>&nbsp;&nbsp;Consultar Alumno</legend>
+            <legend>&nbsp;&nbsp;<span class="glyphicon glyphicon-search"></span>&nbsp;&nbsp;Consultar Usuario</legend>
             <div class="form-group">
                 <label class="col-md-4 control-label" for="rutM">RUT a buscar </label>
                 <div class="col-md-4">
@@ -23,12 +23,13 @@
                     <table id="table_id" class="table table-bordered table-sm m-4 table-striped table-hover" >
                         <tr>
                             <th class="success">RUT Alumno&nbsp;&nbsp;&nbsp;</th>
-                            <th class="success">Nombre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>                                           
+                            <th class="success">Nombre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>                                          
                             <th class="success">Fecha Nacimiento&nbsp;&nbsp;</th>
                             <th class="success">Dirección&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
                             <th class="success">Teléfono&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
                             <th class="success">Celular&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
                             <th class="success">Email&nbsp;&nbsp;</th>
+                            <th class="success">Tipo Usuario&nbsp;&nbsp;</th>
                         </tr>
                     </table>
                 </div>    
