@@ -53,6 +53,24 @@ Route::get('/inspector/registrar/alumnos', function(){
 })->name('registarAlumnos')->middleware('rols:2');
 Route::post('/inspector/registrarAlumno',
 	'UserController@registrarAlumno')->name('guardarUsuario')->middleware('rols:2');
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes Director
+|--------------------------------------------------------------------------
+*/
+
+Route::get('/director', function(){
+	return view('director.index');
+})->name('indexDirector')->middleware('rols:2');
+Route::get('/listarUsuarios', function(){
+	return view('director.listar')->middleware('rols:2');
+});
+Route::get('/cargarPaginaAlumno', function(){
+	return view('director.consulta')->middleware('rols:2');
+});
+
+
 /*
 |--------------------------------------------------------------------------
 | API Routes 
