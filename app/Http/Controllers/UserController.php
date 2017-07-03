@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -110,4 +111,10 @@ class UserController extends Controller
     return $dv;
 
     }*/
+
+    public function salir()
+    {
+        Auth::logout();
+        return redirect()->route('principal');
+    }
 }
