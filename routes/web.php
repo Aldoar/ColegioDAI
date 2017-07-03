@@ -38,46 +38,40 @@ Route::get('/secretaria/listarAlumnos', 'UserController@listarAlumnos')->name('s
 */
 Route::get('/inspector', function(){
 	return view('inspector.index');
-<<<<<<< HEAD
-});
+})->name('indexInspector')->middleware('rols:2');
 Route::get('/listarAlumnos', function(){
 	return view('inspector.listar');
-=======
-})->name('indexInspector')->middleware('rols:2');
+})->middleware('rols:2');
 Route::get('/listarUsuarios', function(){
-	return view('inspector.listar')->middleware('rols:2');
->>>>>>> origin/master
-});
+	return view('inspector.listar');
+})->middleware('rols:2');
 Route::get('/listarProfesores', function(){
 	return view('inspector.listarProfe');
-});
+})->middleware('rols:2');
 Route::get('/listarUsuarios', function(){
 	return view('inspector.listadoUsuarios');
-});
+})->middleware('rols:2');
 Route::get('/cargarPaginaAlumno', function(){
-	return view('inspector.consulta')->middleware('rols:2');
-});
+	return view('inspector.consulta');
+})->middleware('rols:2');
 Route::get('/cargarPaginaUsuario', function(){
 	return view('inspector.consultaUsuario');
-});
+})->middleware('rols:2');
 Route::get('/cargarPaginaProfesor', function(){
 	return view('inspector.consultProf');
-});
+})->middleware('rols:2');
 Route::get('/cargarPaginaEliminar', function(){
-	return view('inspector.eliminar')->middleware('rols:2');
-});
+	return view('inspector.eliminar');
+})->middleware('rols:2');
 Route::get('/cargarPaginaEliminarUs', function(){
 	return view('inspector.eliminarUsu');
-});
-Route::get('usuario/eliminar/{rut}','UserController@delete');
+})->middleware('rols:2');
+Route::get('usuario/eliminar/{rut}','UserController@delete')->middleware('rols:2');
 
 Route::get('/cargarPaginaRegistrarAlumnos', function(){
 	return view('inspector.registrar');
-<<<<<<< HEAD
-});
-Route::post('/registrarAlumno','UserController@registrarAlumno');
-=======
-})->name('registarAlumnos')->middleware('rols:2');
+})->middleware('rols:2');
+Route::post('/registrarAlumno','UserController@registrarAlumno')->name('registarAlumnos')->middleware('rols:2');
 Route::post('/inspector/registrarAlumno',
 	'UserController@registrarAlumno')->name('guardarUsuario')->middleware('rols:2');
 
@@ -89,16 +83,14 @@ Route::post('/inspector/registrarAlumno',
 
 Route::get('/director', function(){
 	return view('director.index');
-})->name('indexDirector')->middleware('rols:2');
+})->name('indexDirector')->middleware('rols:1');
 Route::get('/listarUsuarios', function(){
-	return view('director.listar')->middleware('rols:2');
+	return view('director.listar')->middleware('rols:1');
 });
 Route::get('/cargarPaginaAlumno', function(){
-	return view('director.consulta')->middleware('rols:2');
+	return view('director.consulta')->middleware('rols:1');
 });
 
-
->>>>>>> origin/master
 /*
 |--------------------------------------------------------------------------
 | API Routes 

@@ -10,7 +10,7 @@
 		<span class="glyphicon glyphicon-list"></span> Agendar Tutoria
 	</legend>
 	<div class="col-sm-offset-3 col-sm-6">
-	if ($errors->any())
+	@if ($errors->any())
     <div class="alert alert-danger">
         <ul>
             @foreach ($errors->all() as $error)

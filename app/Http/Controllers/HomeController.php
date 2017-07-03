@@ -26,7 +26,7 @@ class HomeController extends Controller
     {
         switch (Auth::user()->idRols) {
             case '1':
-                return redirect()->route('indexInspector');
+                return redirect()->route('indexDirector');
                 break;
             case '2':
                 return redirect()->route('indexInspector');
