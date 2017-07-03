@@ -11,7 +11,7 @@
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Tutorias
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Agendar Tutoria</a></li>
+          <li><a href="{{route('secretariaAgendar')}}">Agendar Tutoria</a></li>
           <li><a href="#">Confirmar Tutorias</a></li>
           <li><a href="#">Anular Tutorias</a></li>
           <li><a href="#">Modificar Tutorias</a></li>
