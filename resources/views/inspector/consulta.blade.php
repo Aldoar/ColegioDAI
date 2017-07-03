@@ -29,7 +29,7 @@
                             <th class="success">Dirección&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
                             <th class="success">Teléfono&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
                             <th class="success">Celular&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                            <th class="success">Fecha Contratación&nbsp;&nbsp;</th>
+                            <th class="success">Email&nbsp;&nbsp;</th>
                         </tr>
                     </table>
                 </div>    

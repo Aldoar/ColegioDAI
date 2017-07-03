@@ -68,4 +68,6 @@ Route::get('/api/Rols', 'RolController@listarRol');
 //Listar Estados
 Route::get('/api/Estados', 'EstadoController@listarEstado');
 //listar Cursos
-Route::get('/api/Cursos', 'CursoController@listarCurso');
+Route::get('/api/Cursos', 'TutoriaController@listarCurso');
+
+Route::get('/api/TutoriaUser', 'tutoriauserController@listarCurso');

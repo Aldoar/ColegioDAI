@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Tutoria;
+use App\tutoriauser;
 
-class TutoriaController extends Controller
+class tutoriauserController extends Controller
 {
     public function listarCurso()
     {
-    	$cursos = Tutoria::All();
+    	$cursos = tutoriauser::All();
     	return $cursos->toJson();
     }
 }

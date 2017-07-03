@@ -19,20 +19,20 @@
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Profesor
         <span class="caret"></span></a>
         <ul class="dropdown-menu" id="profe">
-          <li><a href="#">Listar  Profesores</a></li>
-          <li><a href="#">Consultar Profesor</a></li>
-          <li><a href="#">Contratar Profesor</a></li>
-          <li><a href="#">Despedir Profesor</a></li>
+          <li><a href="#" id="listarProf">Listar  Profesores</a></li>
+          <li><a href="#" id="consultarProf">Consultar Profesor</a></li>
+          <li><a href="#" id="contratarProf">Contratar Profesor</a></li>
+          <li><a href="#" id="despedirProf">Despedir Profesor</a></li>
         </ul>
       </li>
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Usuario
         <span class="caret"></span></a>
         <ul class="dropdown-menu" id="usuar">
-          <li><a href="#">Listar  Usuarios</a></li>
-          <li><a href="#">Consultar Usuario</a></li>
-          <li><a href="#">Registrar Usuario</a></li>
-          <li><a href="#">Eliminar Usuario</a></li>
+          <li><a href="#" id="listarUsu">Listar  Usuarios</a></li>
+          <li><a href="#" id="consultarUsu">Consultar Usuario</a></li>
+          <li><a href="#" id="registrarUsu">Registrar Usuario</a></li>
+          <li><a href="#" id="eliminarUsu">Eliminar Usuario</a></li>
         </ul>
       </li>
     </ul>

@@ -1,10 +1,10 @@
 
-function cagarListado()
-{
+function cagarListado(){
 	$.ajax({
 		url:"listarUsuarios",
 		type : "GET",
-		success : function(data){			
+		success : function(data){
+			$("#cuerpoInspector").empty();		
 			$("#cuerpoInspector").html(data);
 		},
 		error:function(){			
@@ -17,31 +17,20 @@ function cargarDatos(){
 		type : "GET",
 		success : function(data){
 				var response = $.parseJSON(data);
-				var cursos='';			
-				$.ajax({
-					url:"api/Cursos",
-					success:function(data1){
-						cursos=$.parseJSON(data1);
-						$.each($("#table_id tr"),function (i,item) {
-	                        if(i>0)
-	                            this.remove();
-	                    });									
-						var tdHTML = "";						
-						$.each(response,function (i,item){						
-							$.each(cursos,function(j,cur){
-								if(cur.id==item.idCurso)
-									tdHTML +='<tr class="info"><td>' + item.rut+'</td><td>' + item.name+'</td><td>' + cur.nombre+'</td><td>' + DateAFechaNormal(item.fechaContratacion)+'</td></tr>';
-							});
-						});	
-						if(tdHTML=="")
-							$("#table_id").append('<tr><td colspan="4">No hay datos para mostrar</td></tr>');
-						else
-							$("#table_id").append(tdHTML);						
-						$("#cuerpoBuscar").removeClass("hidden");					
-					},
-					error:function(){					
-					}
-			});		
+				$.each($("#table_id tr"),function (i,item) {
+                    if(i>0)
+                        this.remove();
+                });									
+				var tdHTML = "";						
+				$.each(response,function (i,item){
+					tdHTML +='<tr class="info"><td>' + item.rut+'</td><td>' + item.name+'</td><td>' + item.direccion+'</td><td>' + DateAFechaNormal(item.fechaNacimiento)+'</td></tr>';							
+				});	
+				if(tdHTML=="")
+					$("#table_id").append('<tr><td colspan="4">No hay datos para mostrar</td></tr>');
+				else
+					$("#table_id").append(tdHTML);						
+				$("#cuerpoBuscar").removeClass("hidden");	
+					
 		},
 		error:function(){			
 		}
@@ -54,33 +43,23 @@ function cargarAlumno(rut){
 		type : "GET",
 		success : function(data){
 			var response = $.parseJSON(data);
-			var cursos='';			
-			$.ajax({
-				url:"api/Cursos",
-				success:function(data1){
-					cursos=$.parseJSON(data1);
-					$.each($("#table_id tr"),function (i,item) {
-                        if(i>0)
-                            this.remove();
-                    });								
-					var tdHTML = "";					
-					$.each(response,function (i,item){
-						if(item.rut==rut){
-							$.each(cursos,function(j,cur){
-								if(cur.id==item.idCurso)
-									tdHTML +='<tr class="info"><td>' + item.rut+'</td><td>' + item.name+'</td><td>' + cur.nombre+'</td><td>' + DateAFechaNormal(item.fechaNacimiento)+'</td><td>' + item.direccion+'</td><td>' + item.telefono+'</td><td>' + item.celular+'</td><td>' + DateAFechaNormal(item.fechaContratacion)+'</td></tr>';
-							});							
-						}
-					});	
-					if(tdHTML=="")
-						$("#table_id").append('<tr><td colspan="8">No hay datos para mostrar</td></tr>');
-					else
-						$("#table_id").append(tdHTML);						
-					$("#cuerpoBuscar").removeClass("hidden");					
-				},
-				error:function(){					
+			var cursos='';				
+			$.each($("#table_id tr"),function (i,item) {
+                if(i>0)
+                    this.remove();
+            });								
+			var tdHTML = "";					
+			$.each(response,function (i,item){
+				if(item.rut==rut){
+					tdHTML +='<tr class="info"><td>' + item.rut+'</td><td>' + item.name+'</td><td>' + item.direccion+'</td><td>' + DateAFechaNormal(item.fechaNacimiento)+'</td><td>' + item.direccion+'</td><td>' + item.telefono+'</td><td>' + item.celular+'</td><td>' + item.email+'</td></tr>';											
 				}
-			});					
+			});	
+			if(tdHTML=="")
+				$("#table_id").append('<tr><td colspan="8">No hay datos para mostrar</td></tr>');
+			else
+				$("#table_id").append(tdHTML);						
+			$("#cuerpoBuscar").removeClass("hidden");					
+							
 		},
 		error:function(){			
 		}
@@ -113,12 +92,48 @@ function cargarPaginaEliminar(){
 });
 }
 $("body ").on('click','#eliminar',function(){
+	var alumno={};
 	$.ajax({
-		url : "api/Users/buscar/"+$("#rutM").val()
+		url : "api/Users/buscar/"+$("#rutM").val(),
+		success : function(data){
+			console.log(data);
+			if(data!="")
+			{
+				alumno=$.parseJSON(data);
+				if(alumno.idRols==4)
+					eliminarAlumno(alumno.id);
+				else
+				{
+					$("#eliminarModal").modal('hide');
+					$("#strong").text('No existe Alumno');
+					$(".alert-danger").removeClass("hidden");
+				    setTimeout(function() {
+				        $(".alert-danger").fadeIn();
+				    },0);
+				    setTimeout(function() {
+				        $(".alert-danger").fadeOut();
+				    },3000);
+				}
+			}
+			else
+				{
+					$("#eliminarModal").modal('hide');
+					$("#strong").text('No existe Alumno');
+					$(".alert-danger").removeClass("hidden");
+				    setTimeout(function() {
+				        $(".alert-danger").fadeIn();
+				    },0);
+				    setTimeout(function() {
+				        $(".alert-danger").fadeOut();
+				    },3000);
+				}
+		}
+
 	});		
-	eliminarAlumno($("#rutM").val());
+	
 });
 $("#listarAlu").on("click",function(){
+
 	cagarListado();
 	cargarDatos();
 });
@@ -129,26 +144,43 @@ $("#eliminarAlu").on("click",function(){
 	cargarPaginaEliminar();
 });
 function eliminarAlumno(elemento) {
-
 	$("#eliminarModal").modal();
 	$("#btnEliminar").unbind().on('click', function() {
 		$.ajax({
 			'method':'get',
 			'url': 'usuario/eliminar/' + elemento,
-			'success': function(data) {
-				
-				$("#eliminarModal").modal('hide');
-				toastr.success('Eliminado correctamente');
+			'success': function(data) {				
+				if(data=="ok"){					
+					$("#eliminarModal").modal('hide');
+					$("#strong").text('Eliminado Correctamente el Alumno');
+					$(".alert-danger").removeClass("hidden");
+				    setTimeout(function() {
+				        $(".alert-danger").fadeIn();
+				    },0);
+				    setTimeout(function() {
+				        $(".alert-danger").fadeOut();
+				    },3000);
+				}
+				else
+				{
+					$("#eliminarModal").modal('hide');
+					$("#strong").text('No existe Alumno');
+					$(".alert-danger").removeClass("hidden");
+				    setTimeout(function() {
+				        $(".alert-danger").fadeIn();
+				    },0);
+				    setTimeout(function() {
+				        $(".alert-danger").fadeOut();
+				    },3000);
+				}				
 				//$("#divTable").html(data);
 			},
 			'error': function() {
-				toastr.error('No se ha podido eliminar');
+				
 			}
 		});	
 	});
-
 }
-
 function DateAFechaNormal(fecha) {
     var d1 = new Date(fecha);
     var y1= d1.getFullYear();

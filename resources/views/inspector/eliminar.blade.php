@@ -35,3 +35,6 @@
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+<div class="alert alert-danger hidden">
+    <strong id="strong"></strong>
+</div>
