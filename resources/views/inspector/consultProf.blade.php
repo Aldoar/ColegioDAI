@@ -2,7 +2,7 @@
     <div class="row">
         <div class="form-horizontal"><br/>
             <!-- Form Name -->
-            <legend>&nbsp;&nbsp;<span class="glyphicon glyphicon-search"></span>&nbsp;&nbsp;Consultar Alumno</legend>
+            <legend>&nbsp;&nbsp;<span class="glyphicon glyphicon-search"></span>&nbsp;&nbsp;Consultar Profesor</legend>
             <div class="form-group">
                 <label class="col-md-4 control-label" for="rutM">RUT a buscar </label>
                 <div class="col-md-4">

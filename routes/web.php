@@ -37,21 +37,36 @@ Route::get('/secretaria/listarAlumnos', 'UserController@listarAlumnos')->name('s
 Route::get('/inspector', function(){
 	return view('inspector.index');
 });
-Route::get('/listarUsuarios', function(){
+Route::get('/listarAlumnos', function(){
 	return view('inspector.listar');
+});
+Route::get('/listarProfesores', function(){
+	return view('inspector.listarProfe');
+});
+Route::get('/listarUsuarios', function(){
+	return view('inspector.listadoUsuarios');
 });
 Route::get('/cargarPaginaAlumno', function(){
 	return view('inspector.consulta');
 });
+Route::get('/cargarPaginaUsuario', function(){
+	return view('inspector.consultaUsuario');
+});
+Route::get('/cargarPaginaProfesor', function(){
+	return view('inspector.consultProf');
+});
 Route::get('/cargarPaginaEliminar', function(){
 	return view('inspector.eliminar');
 });
+Route::get('/cargarPaginaEliminarUs', function(){
+	return view('inspector.eliminarUsu');
+});
 Route::get('usuario/eliminar/{rut}','UserController@delete');
-Route::get('/inspector/registrar/alumnos', function(){
+
+Route::get('/cargarPaginaRegistrarAlumnos', function(){
 	return view('inspector.registrar');
-})->name('registarAlumnos');
-Route::post('/inspector/registrarAlumno',
-	'UserController@registrarAlumno')->name('guardarUsuario');
+});
+Route::post('/registrarAlumno','UserController@registrarAlumno');
 /*
 |--------------------------------------------------------------------------
 | API Routes 

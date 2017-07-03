@@ -21,7 +21,7 @@ class UserController extends Controller
     }
 
     //registrar alumno
-   /* public function registrarAlumno(Request $request)
+    /*public function registrarAlumno(Request $request)
     {
         $this->validate($request,[
             'rut'=> 'required|min9'
@@ -43,11 +43,11 @@ class UserController extends Controller
             $user->idRols = 4;
             $user->save();
             //retorna lo que se hizo, una web, una variable o lo que sea
-            //return view('');
+            return "ok";
         }
         else
         {
-            //lo Mismo aquí
+            return "error";
         }
         
     }*/
