@@ -28,9 +28,9 @@ Route::get('/salir', 'UserController@salir')->name('salir');
 */
 Route::get('/secretaria', function(){
 	return view('secretaria.index');
-})->name('secretariaIndex');
-Route::get('/secretaria/registrar/tutoria', 'TutoriaController@agendarVista')->name('secretariaAgendar');
-Route::get('/secretaria/listarAlumnos', 'UserController@listarAlumnos')->name('secretariaListarAlumnnos');
+})->name('secretariaIndex')->middleware('rols:3');
+Route::get('/secretaria/registrar/tutoria', 'TutoriaController@agendarVista')->name('secretariaAgendar')->middleware('rols:3');
+Route::get('/secretaria/listarAlumnos', 'UserController@listarAlumnos')->name('secretariaListarAlumnnos')->middleware('rols:3');
 /*
 |--------------------------------------------------------------------------
 | Web Routes Inspector
@@ -39,34 +39,34 @@ Route::get('/secretaria/listarAlumnos', 'UserController@listarAlumnos')->name('s
 Route::get('/inspector', function(){
 	return view('inspector.index');
 })->name('indexInspector')->middleware('rols:2');
-Route::get('/listarAlumnos', function(){
+Route::get('inspector/listarAlumnos', function(){
 	return view('inspector.listar');
 })->middleware('rols:2');
-Route::get('/listarUsuarios', function(){
+Route::get('inspector/listarUsuarios', function(){
 	return view('inspector.listar');
 })->middleware('rols:2');
-Route::get('/listarProfesores', function(){
+Route::get('inspector/listarProfesores', function(){
 	return view('inspector.listarProfe');
 })->middleware('rols:2');
-Route::get('/listarUsuarios', function(){
+Route::get('inspector/listarUsuarios', function(){
 	return view('inspector.listadoUsuarios');
 })->middleware('rols:2');
-Route::get('/cargarPaginaAlumno', function(){
+Route::get('inspector/cargarPaginaAlumno', function(){
 	return view('inspector.consulta');
 })->middleware('rols:2');
-Route::get('/cargarPaginaUsuario', function(){
+Route::get('inspector/cargarPaginaUsuario', function(){
 	return view('inspector.consultaUsuario');
 })->middleware('rols:2');
-Route::get('/cargarPaginaProfesor', function(){
+Route::get('inspector/cargarPaginaProfesor', function(){
 	return view('inspector.consultProf');
 })->middleware('rols:2');
-Route::get('/cargarPaginaEliminar', function(){
+Route::get('inspector/cargarPaginaEliminar', function(){
 	return view('inspector.eliminar');
 })->middleware('rols:2');
-Route::get('/cargarPaginaEliminarUs', function(){
+Route::get('inspector/cargarPaginaEliminarUs', function(){
 	return view('inspector.eliminarUsu');
 })->middleware('rols:2');
-Route::get('usuario/eliminar/{rut}','UserController@delete')->middleware('rols:2');
+Route::get('inspector/usuario/eliminar/{rut}','UserController@delete')->middleware('rols:2');
 
 Route::get('/cargarPaginaRegistrarAlumnos', function(){
 	return view('inspector.registrar');
