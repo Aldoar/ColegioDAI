@@ -1,4 +1,4 @@
-
+	
 function cagarListado(){
 	$.ajax({
 		url:"listarAlumnos",

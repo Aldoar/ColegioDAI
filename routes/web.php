@@ -81,15 +81,26 @@ Route::post('/inspector/registrarAlumno',
 |--------------------------------------------------------------------------
 */
 
+
+
 Route::get('/director', function(){
 	return view('director.index');
 })->name('indexDirector')->middleware('rols:1');
-Route::get('/listarUsuarios', function(){
-	return view('director.listar')->middleware('rols:1');
-});
+
+Route::get('/dlistarUsuarios', function(){
+	return view('director.listar');
+})->name('listarAlu')->middleware('rols:1');
+
 Route::get('/cargarPaginaAlumno', function(){
-	return view('director.consulta')->middleware('rols:1');
-});
+	return view('director.consulta');
+})->name('consultarAlu')->middleware('rols:1');
+
+
+
+
+
+
+//Route::get('/director/listarAlumnos', 'UserController@listarAlumnos')->name('directorListarAlumnnos');
 
 /*
 |--------------------------------------------------------------------------

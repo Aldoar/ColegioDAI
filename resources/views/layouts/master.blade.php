@@ -39,6 +39,7 @@
     <scrispt src="{{ asset('js/toastr.min.js')}}"></script> 
     <script src="{{ asset('js/jquery.dataTables.min.js')}}"></script>
     <script  src="{{ asset('js/inspector.js') }}"></script>
+    <script  src="{{ asset('js/director.js') }}"></script>
     <scrispt src="{{ asset('js/funciones.js')}}"></script>    
     <!-- Se utiliza para Jquery.Table -->
     <script type="text/javascript">    

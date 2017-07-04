@@ -9,7 +9,7 @@
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Alumno
         <span class="caret"></span></a>
         <ul class="dropdown-menu" id="alumn">
-          <li><a href="#" id="listarAlu">Listar Alumnos</a></li>
+          <li><a href="#" id="listarAlu2">Listar Alumnos</a></li>
           <li><a href="#" id="consultarAlu">Consultar Alumno</a></li>
           
         </ul>
