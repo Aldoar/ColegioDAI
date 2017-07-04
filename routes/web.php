@@ -28,9 +28,9 @@ Route::get('/salir', 'UserController@salir')->name('salir');
 */
 Route::get('/secretaria', function(){
 	return view('secretaria.index');
-})->name('secretariaIndex');
-Route::get('/secretaria/registrar/tutoria', 'TutoriaController@agendarVista')->name('secretariaAgendar');
-Route::get('/secretaria/listarAlumnos', 'UserController@listarAlumnos')->name('secretariaListarAlumnnos');
+})->name('secretariaIndex')->middleware('rols:3');
+Route::get('/secretaria/registrar/tutoria', 'TutoriaController@agendarVista')->name('secretariaAgendar')->middleware('rols:3');
+Route::get('/secretaria/listarAlumnos', 'UserController@listarAlumnos')->name('secretariaListarAlumnnos')->middleware('rols:3');
 /*
 |--------------------------------------------------------------------------
 | Web Routes Inspector
