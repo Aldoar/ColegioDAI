@@ -1,7 +1,7 @@
 
 function cagarListado(){
 	$.ajax({
-		url:"listarAlumnos",
+		url:"inspector/listarAlumnos",
 		type : "GET",
 		success : function(data){
 			$("#cuerpoInspector").empty();		
@@ -13,7 +13,7 @@ function cagarListado(){
 }
 function cagarListadoProf(){
 	$.ajax({
-		url:"listarProfesores",
+		url:"inspector/listarProfesores",
 		type : "GET",
 		success : function(data){
 			$("#cuerpoInspector").empty();		
@@ -25,7 +25,7 @@ function cagarListadoProf(){
 }
 function cagarListadoUsuarios(){
 	$.ajax({
-		url:"listarUsuarios",
+		url:"inspector/listarUsuarios",
 		type : "GET",
 		success : function(data){
 			$("#cuerpoInspector").empty();		
@@ -84,7 +84,7 @@ function cargarDatosUsuario(){
 							
 						});	
 						if(tdHTML=="")
-							$("#table_id").append('<tr><td colspan="4">No hay datos para mostrar</td></tr>');
+							$("#table_id").append('<tr><td colspan="5">No hay datos para mostrar</td></tr>');
 						else
 							$("#table_id").append(tdHTML);						
 						$("#cuerpoBuscar").removeClass("hidden");	
@@ -205,7 +205,7 @@ function cargarUsuario(rut){
 							
 						});	
 						if(tdHTML=="")
-							$("#table_id").append('<tr><td colspan="4">No hay datos para mostrar</td></tr>');
+							$("#table_id").append('<tr><td colspan="8">No hay datos para mostrar</td></tr>');
 						else
 							$("#table_id").append(tdHTML);						
 						$("#cuerpoBuscar").removeClass("hidden");	
@@ -220,7 +220,7 @@ function cargarUsuario(rut){
 }
 function cargarPaginaAlumno(){
 	$.ajax({
-		url:"cargarPaginaAlumno",
+		url:"inspector/cargarPaginaAlumno",
 		type : "GET",
 		success : function(data){			
 			$("#cuerpoInspector").html(data);			
@@ -235,7 +235,7 @@ function cargarPaginaAlumno(){
 }
 function cargarPaginaProf(){
 	$.ajax({
-		url:"cargarPaginaProfesor",
+		url:"inspector/cargarPaginaProfesor",
 		type : "GET",
 		success : function(data){			
 			$("#cuerpoInspector").html(data);			
@@ -250,7 +250,7 @@ function cargarPaginaProf(){
 }
 function cargarPaginaUsu(){
 	$.ajax({
-		url:"cargarPaginaUsuario",
+		url:"inspector/cargarPaginaUsuario",
 		type : "GET",
 		success : function(data){			
 			$("#cuerpoInspector").html(data);			
@@ -265,7 +265,7 @@ function cargarPaginaUsu(){
 }
 function cargarPaginaEliminar(){
 	$.ajax({
-		url:"cargarPaginaEliminar",
+		url:"inspector/cargarPaginaEliminar",
 		type : "GET",
 		success : function(data){			
 			$("#cuerpoInspector").html(data);
@@ -276,7 +276,7 @@ function cargarPaginaEliminar(){
 }
 function cargarPaginaEliminarUsuario(){
 	$.ajax({
-		url:"cargarPaginaEliminarUs",
+		url:"inspector/cargarPaginaEliminarUs",
 		type : "GET",
 		success : function(data){		
 			$("#cuerpoInspector").html(data);
@@ -426,7 +426,7 @@ function eliminarAlumno(elemento) {
 	$("#btnEliminar").unbind().on('click', function() {
 		$.ajax({
 			'method':'get',
-			'url': 'usuario/eliminar/' + elemento,
+			'url': 'inspector/usuario/eliminar/' + elemento,
 			'success': function(data) {				
 				if(data=="ok"){					
 					$("#eliminarModal").modal('hide');
@@ -464,7 +464,7 @@ function eliminarUsuario(elemento) {
 	$("#btnEliminarUs").unbind().on('click', function() {
 		$.ajax({
 			'method':'get',
-			'url': 'usuario/eliminar/' + elemento,
+			'url': 'inspector/usuario/eliminar/' + elemento,
 			'success': function(data) {				
 				if(data=="ok"){					
 					$("#eliminarModal").modal('hide');
